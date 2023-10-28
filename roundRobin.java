@@ -30,10 +30,10 @@ public class roundRobin {
         pln("Enter AT and BT for processes");
 
         for (int i = 0; i < n; i++) {
-            System.out.println("\tProcess: " + (i + 1));
-            System.out.print("AT: ");
+            pln("\tProcess: " + (i + 1));
+            p("AT: ");
             at[i] = scanner.nextInt();
-            System.out.print("BT: ");
+            p("BT: ");
             bt[i] = scanner.nextInt();
             t_bt[i] = bt[i];
             completed[i] = false;
@@ -62,8 +62,8 @@ public class roundRobin {
 			front++;
 			
 			int cbt = Math.min(tq, t_bt[currP]);
-            currentTime += cbt;
-            t_bt[currP] -= cbt;		
+		    currentTime += cbt;
+		    t_bt[currP] -= cbt;		
 			
 			if (t_bt[currP] == 0) {
                 tat[currP] = currentTime - at[currP];
