@@ -44,9 +44,9 @@ public class roundRobin {
             currentTime++;
         }
 
-        int pQueue[] = new int[100]; // Create a process queue
-        int front = 0; // Front of the queue
-        int rear = 0; // Rear of the queue
+        int pQueue[] = new int[100];
+        int front = 0;
+        int rear = 0;
         
         boolean allComplete = false;
         
@@ -59,10 +59,6 @@ public class roundRobin {
 	
 		while (!allComplete) {
 			int currP = pQueue[front];
-			for (int i=front; i!=rear; i++) {
-				p(pQueue[i] + " ");
-			}
-			pln(" ");
 			front++;
 			
 			int cbt = Math.min(tq, t_bt[currP]);
@@ -108,16 +104,15 @@ public class roundRobin {
             avgWT += wt[i];
         }
 
-        avgTAT /= n;
-        avgWT /= n;
-
-        System.out.println("Process\tArrival Time\tBurst Time\tWait Time\tTurnaround Time");
-        for (int i = 0; i < n; i++) {
-            System.out.println((i + 1) + "\t\t" + at[i] + "\t\t" + bt[i] + "\t\t" + wt[i] + "\t\t" + tat[i]);
+        System.out.println("\nPid\tAT\tBT\tTAT\tWT");
+        for (int  i = 0 ; i< n;  i++) {
+            pln((i + 1) + "  \t " + at[i] + "\t" + bt[i] + "\t" + tat[i] + "\t"  + wt[i] );
         }
-
-        System.out.println("\nAverage wait time: " + avgWT);
-        System.out.println("Average Turnaround Time: " + avgTAT);
+       
+        System.out.println("\naverage waiting time: "+ (avgWT/n));     
+        System.out.println("average turnaround time:"+(avgTAT/n));    
+        scanner.close();
     }
 }
+
 
