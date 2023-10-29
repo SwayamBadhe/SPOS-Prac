@@ -17,7 +17,6 @@ public class SJF {
         boolean completed[] = new boolean[n];
 
         float avgWT = 0, avgTAT = 0;
-
         // Taking Input
         System.out.println("Enter AT and BT for processes");
 
