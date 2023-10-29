@@ -133,6 +133,7 @@ class pass1:
                         # literals are constants
                         self.IC[-1].append(("DL", 1))
                         self.IC[-1].append(("C", self.literalTable[i][0]))
+                        self.IC[-1].append(self.location)
                         self.location += 1
                         self.litTablePtr += 1
                     self.poolTable.append(self.litTablePtr)
